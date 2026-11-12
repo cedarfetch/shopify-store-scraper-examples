@@ -1,0 +1,14 @@
+{
+  "name": "shopify-store-scraper-examples",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js examples for the Shopify Store Scraper Apify Actor",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "apify-client": "^2.26.0"
+  }
+}
