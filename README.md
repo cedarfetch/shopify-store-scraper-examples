@@ -155,6 +155,14 @@ With change tracking on, rows also carry `changeType` (`new`, `price_changed`, `
 
 **Recently touched products.** `updatedAfter: "7 days"` keeps products Shopify changed recently. Shopify bumps `updated_at` on most edits, including stock, so this is a "recently touched" filter, not a "price changed" filter. Use change tracking for exact changes.
 
+## Guide
+
+Step-by-step write-up of the underlying endpoint, its limits and a do-it-yourself version: [How to export every product from a Shopify store with /products.json](https://dev.to/cedarfetch/how-to-export-every-product-from-a-shopify-store-with-productsjson-5dne).
+
+## n8n workflow
+
+[`n8n/shopify-price-and-stock-changes-to-slack.json`](n8n/shopify-price-and-stock-changes-to-slack.json) is an importable n8n workflow (core nodes only) that runs the Actor once a day with change tracking and posts one Slack message with the price and stock changes, or nothing when nothing changed. A disabled Send Email node is included for people who do not use Slack. Setup, cost per run and the 300-second limit are in [`n8n/README.md`](n8n/README.md).
+
 ## Pricing
 
 The Actor uses pay-per-event pricing. Prices shown on the [Apify listing](https://apify.com/cedarfetch/shopify-store-scraper) when this repository was written (2026-11-11):
